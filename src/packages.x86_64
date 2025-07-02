@@ -1,0 +1,394 @@
+#
+# /etc/archiso/packages.x86_64
+#
+# This file contains a list of packages to be installed on the Arch Linux ISO.
+# The packages are organized into logical groups for clarity and maintainability.
+# Every package from the original list has been preserved to prevent build failures.
+#
+
+# -- Core System & Command-line Utilities --
+# These are the fundamental packages required for a basic, functional Arch Linux system.
+base
+bzip2
+dbus
+gzip
+less
+lsb-release
+lz4
+lzip
+lzop
+man-db
+man-pages
+mkinitcpio
+polkit
+sudo
+xz
+zstd
+
+# -- Linux Kernel & Firmware --
+# The kernel itself, along with firmware needed for various hardware components.
+linux
+linux-firmware
+linux-firmware-marvell
+linux-atm
+sof-firmware
+amd-ucode
+intel-ucode
+b43-fwcutter
+broadcom-wl
+
+# -- Bootloaders & Boot Utilities --
+# Tools for booting the system, including GRUB, Syslinux, and UEFI utilities.
+grub
+syslinux
+efibootmgr
+os-prober
+refind
+memtest86+
+memtest86+-efi
+plymouth
+update-grub
+
+# -- Archiso, Installation & Recovery Tools --
+# Packages essential for the ISO creation process and for system installation/recovery.
+archinstall
+arch-install-scripts
+clonezilla
+ddrescue
+fsarchiver
+mkinitcpio-archiso
+mkinitcpio-firmware
+mkinitcpio-nfs-utils
+partclone
+parted
+partimage
+squashfs-tools
+testdisk
+
+# -- Filesystem & Disk Management --
+# A comprehensive set of tools for managing various filesystems, partitions, and storage volumes.
+bcachefs-tools
+btrfs-progs
+cryptsetup
+dmraid
+dosfstools
+e2fsprogs
+exfatprogs
+f2fs-tools
+fatresize
+gpart
+gparted
+gptfdisk
+jfsutils
+kpmcore
+lvm2
+mdadm
+mtools
+nbd
+nfs-utils
+nilfs-utils
+ntfs-3g
+open-iscsi
+udftools
+xfsprogs
+
+# -- Networking & Connectivity --
+# Core networking stack, connection managers, VPN clients, and command-line network tools.
+bind
+darkhttpd
+dhclient
+dhcpcd
+dnsmasq
+ethtool
+iw
+iwd
+ldns
+modemmanager
+nethogs
+networkmanager
+network-manager-applet
+nm-connection-editor
+ndisc6
+nmap
+openssh
+ppp
+rp-pppoe
+systemd-resolvconf
+tcpdump
+wget
+wireless-regdb
+wireless_tools
+wpa_supplicant
+wvdial
+xl2tpd
+
+# -- VPN & Tunneling Clients (for NetworkManager) --
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+network-manager-sstp
+networkmanager-strongswan
+networkmanager-vpnc
+openconnect
+openvpn
+pptpclient
+vpnc
+
+# -- X.Org Server, Graphics Drivers & Utilities --
+# The X server, video drivers for common hardware, and related utilities.
+mesa
+mesa-utils
+xorg
+xorg-xinput
+xterm
+# generic and virtual drivers
+xf86-input-libinput
+xf86-input-vmmouse
+xf86-video-fbdev
+xf86-video-vesa
+# Hardware-specific drivers
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-intel
+xf86-video-nouveau
+# NVIDIA drivers
+nvidia
+nvidia-settings
+nvidia-utils
+
+# -- Desktop Environment (XFCE), Window Manager & Components --
+# The graphical user interface, including the desktop environment, display manager, compositor, and themes.
+# Core XFCE
+xfce4
+xfce4-goodies
+# Display Manager
+lightdm
+lightdm-gtk-greeter
+# Compositor, Bars, and Launchers
+picom
+polybar
+rofi
+# Theming and Appearance
+kvantum
+lxappearance
+qt5ct
+qt6ct
+# Core DE Utilities
+arandr
+dunst
+gnome-keyring
+gvfs
+gvfs-afc
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-smb
+kcrash
+ksuperkey
+mugshot
+tumbler
+xclip
+xcolor
+xdg-user-dirs
+xdg-user-dirs-gtk
+xdotool
+yad
+# Plasma framework - likely pulled in as a dependency for a Qt application
+plasma-framework5
+
+# -- Terminal Emulators & Shells --
+# A collection of modern and classic terminal emulators and shells.
+foot-terminfo
+kitty
+kitty-terminfo
+rxvt-unicode-terminfo
+screen
+terminator
+tmux
+zsh
+ueberzug
+
+# -- General Applications --
+# A curated list of GUI and command-line applications for various tasks.
+# File Managers
+mc
+pcmanfm
+ranger
+xarchiver
+# Text Editors
+nano
+neovim
+sublime-text-4
+vim
+# Internet & Communication
+firefox
+irssi
+lynx
+# Media & Document Viewers
+evince
+feh
+simplescreenrecorder
+viewnior
+zathura
+# System & Utility Applications
+fastfetch
+flameshot
+galculator
+htop
+maim
+meld
+neofetch
+timeshift
+trash-cli
+tree
+# Other
+obsidian
+
+# -- Audio & Multimedia (PipeWire) --
+# The PipeWire audio stack, codecs, and related applications.
+# Core Audio Stack
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+wireplumber
+# Utilities
+alsa-utils
+pavucontrol
+pulsemixer
+# GStreamer Framework & Plugins
+gstreamer
+gst-libav
+gst-plugin-pipewire
+gst-plugins-bad
+gst-plugins-good
+gst-plugins-ugly
+# Codecs & Libraries
+ffmpeg
+ffmpegthumbnailer
+jasper
+libavif
+libde265
+libdv
+libfido2
+libheif
+libmpeg2
+libtheora
+libusb-compat
+libvpx
+libwebp
+schroedinger
+x264
+x265
+xvidcore
+livecd-sounds
+
+# -- Hardware Management & Utilities --
+# Tools for interacting with and managing hardware devices.
+acpi
+bolt
+brightnessctl
+dmidecode
+hdparm
+lsscsi
+nvme-cli
+pcsclite
+powertop
+sdparm
+sg3_utils
+smartmontools
+tpm2-tools
+tpm2-tss
+udisks2
+usb_modeswitch
+usbmuxd
+usbutils
+
+# -- Accessibility --
+# Tools for users with disabilities.
+brltty
+espeakup
+
+# -- Development Tools & Libraries --
+# Compilers, build tools, version control, and programming languages.
+autoconf
+automake
+base-devel
+bison
+boost
+diffutils
+fakeroot
+flex
+gcc
+git
+go
+highlight
+make
+patch
+pkgconf
+python-pip
+python-pipx
+# Search & CLI tools often used in development
+fd
+fzf
+ripgrep
+
+# -- Fonts --
+# A collection of fonts for the desktop and terminal.
+adobe-source-code-pro-fonts
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+terminus-font
+ttf-firacode-nerd
+ttf-jetbrains-mono-nerd
+
+# -- Virtualization Guest Utilities --
+# Tools to improve integration when running the ISO in a virtual machine.
+cloud-init
+hyperv
+open-vm-tools
+qemu-guest-agent
+spice-vdagent
+virtualbox-guest-iso
+virtualbox-guest-utils
+
+# -- System Maintenance & AUR --
+# Tools for system maintenance, package management, and accessing the AUR.
+downgrade
+reflector
+rsync
+sequoia-sq
+yay
+
+# -- Compression & Archive Utilities --
+p7zip
+unarchiver
+unrar
+unzip
+zip
+
+# -- Third-Party Repositories --
+# Keyrings and mirrorlists for non-official repositories.
+# Make sure these repositories are configured in /etc/pacman.conf on the ISO build.
+blackarch-keyring
+blackarch-mirrorlist
+chaotic-keyring
+chaotic-mirrorlist
+
+# -- Custom 'Berserk' Packages --
+# Custom packages specific to the Berserk OS configuration.
+berserk-keyring
+berserk-mirrorlist
+# Installer
+berserk-calamares
+berserk-config-calamares
+berserk-hooks
+# Theming & Configuration
+berserk-config-xfce
+berserk-firefox-defaults
+berserk-grub-theme
+berserk-omz
+berserk-plymouth-theme
+berserk-sunity-cursor
+berserk-tpm-tmux
