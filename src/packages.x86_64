@@ -30,20 +30,20 @@ zstd
 linux
 linux-firmware
 linux-firmware-marvell
-linux-atm
+# linux-atm
 sof-firmware
 amd-ucode
 intel-ucode
 b43-fwcutter
-broadcom-wl
+# broadcom-wl
 
 # -- Bootloaders & Boot Utilities --
 # Tools for booting the system, including GRUB, Syslinux, and UEFI utilities.
 grub
 syslinux
 efibootmgr
-os-prober
-refind
+#os-prober
+# refind
 memtest86+
 memtest86+-efi
 plymouth
@@ -53,7 +53,7 @@ update-grub
 # Packages essential for the ISO creation process and for system installation/recovery.
 archinstall
 arch-install-scripts
-clonezilla
+#clonezilla
 ddrescue
 fsarchiver
 mkinitcpio-archiso
@@ -70,7 +70,7 @@ testdisk
 bcachefs-tools
 btrfs-progs
 cryptsetup
-dmraid
+# dmraid
 dosfstools
 e2fsprogs
 exfatprogs
@@ -81,8 +81,8 @@ gparted
 gptfdisk
 jfsutils
 kpmcore
-lvm2
-mdadm
+# lvm2
+# mdadm
 mtools
 nbd
 nfs-utils
@@ -95,7 +95,7 @@ xfsprogs
 # -- Networking & Connectivity --
 # Core networking stack, connection managers, VPN clients, and command-line network tools.
 bind
-darkhttpd
+# darkhttpd
 dhclient
 dhcpcd
 dnsmasq
@@ -147,14 +147,14 @@ xf86-input-vmmouse
 xf86-video-fbdev
 xf86-video-vesa
 # Hardware-specific drivers
-xf86-video-amdgpu
-xf86-video-ati
-xf86-video-intel
-xf86-video-nouveau
+# xf86-video-amdgpu
+# xf86-video-ati
+# xf86-video-intel
+# xf86-video-nouveau
 # NVIDIA drivers
-nvidia
-nvidia-settings
-nvidia-utils
+# nvidia
+# nvidia-settings
+# nvidia-utils
 
 # -- Desktop Environment (XFCE), Window Manager & Components --
 # The graphical user interface, including the desktop environment, display manager, compositor, and themes.
@@ -222,12 +222,12 @@ sublime-text-4
 vim
 # Internet & Communication
 firefox
-irssi
-lynx
+# irssi
+# lynx
 # Media & Document Viewers
 evince
 feh
-simplescreenrecorder
+#simplescreenrecorder
 viewnior
 zathura
 # System & Utility Applications
@@ -286,7 +286,7 @@ livecd-sounds
 # -- Hardware Management & Utilities --
 # Tools for interacting with and managing hardware devices.
 acpi
-bolt
+# bolt
 brightnessctl
 dmidecode
 hdparm
@@ -306,8 +306,8 @@ usbutils
 
 # -- Accessibility --
 # Tools for users with disabilities.
-brltty
-espeakup
+# brltty
+# espeakup
 
 # -- Development Tools & Libraries --
 # Compilers, build tools, version control, and programming languages.
@@ -362,6 +362,8 @@ sequoia-sq
 yay
 
 # -- Compression & Archive Utilities --
+exa
+yazi
 p7zip
 unarchiver
 unrar
