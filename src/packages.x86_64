@@ -90,7 +90,7 @@ xfsprogs
 # -- Networking & Connectivity --
 # Core networking stack, connection managers, VPN clients, and command-line network tools.
 bind
-# darkhttpd
+darkhttpd
 dhclient
 dhcpcd
 dnsmasq

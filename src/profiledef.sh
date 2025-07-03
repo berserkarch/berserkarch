@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="berserkarch"
-iso_label="BERSERK_ARCH_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_name="berserkarch-vm"
+iso_label="BERSERK_ARCH_VM_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
 iso_publisher="Gaurav Raj (@thehackersbrain) <me@thehackersbrain.xyz>"
-iso_application="Berserk Arch Live/Installation/Rescue CD"
+iso_application="Berserk Arch VM Live/Installation/Rescue CD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
