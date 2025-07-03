@@ -1,6 +1,3 @@
-#
-# /etc/archiso/packages.x86_64
-#
 # -- Core System & Command-line Utilities --
 # These are the fundamental packages required for a basic, functional Arch Linux system.
 base
@@ -389,3 +386,4 @@ berserk-omz
 berserk-plymouth-theme
 berserk-sunity-cursor
 berserk-tpm-tmux
+berserk-lazyvim
