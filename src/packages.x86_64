@@ -1,11 +1,6 @@
 #
 # /etc/archiso/packages.x86_64
 #
-# This file contains a list of packages to be installed on the Arch Linux ISO.
-# The packages are organized into logical groups for clarity and maintainability.
-# Every package from the original list has been preserved to prevent build failures.
-#
-
 # -- Core System & Command-line Utilities --
 # These are the fundamental packages required for a basic, functional Arch Linux system.
 base
