@@ -6,4 +6,4 @@
 QT_QPA_PLATFORMTHEME=qt5ct
 EDITOR=vim
 BROWSER=firefox
-PATH="/usr/share/archcraft/scripts"
+PATH="/usr/share/berserk-arch/scripts"
