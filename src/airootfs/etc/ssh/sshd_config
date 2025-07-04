@@ -10,7 +10,7 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
-#Port 22
+Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -38,7 +38,7 @@ PermitRootLogin yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
-AuthorizedKeysFile	.ssh/authorized_keys
+AuthorizedKeysFile .ssh/authorized_keys
 
 #AuthorizedPrincipalsFile none
 
@@ -54,7 +54,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication yes
+PasswordAuthentication yes
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
@@ -106,7 +106,7 @@ PrintMotd no
 #Banner none
 
 # override default of no subsystems
-Subsystem	sftp	/usr/lib/ssh/sftp-server
+Subsystem sftp /usr/lib/ssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
