@@ -362,6 +362,11 @@ unrar
 unzip
 zip
 
+## security setup
+# core apparmor support
+apparmor
+audit
+
 # -- Third-Party Repositories --
 # Keyrings and mirrorlists for non-official repositories.
 # Make sure these repositories are configured in /etc/pacman.conf on the ISO build.
@@ -388,8 +393,4 @@ berserk-sunity-cursor
 berserk-tpm-tmux
 berserk-lazyvim
 berserk-welcome
-
-## security setup
-# core apparmor support
-apparmor
-audit
+berserk-apparmor
