@@ -388,3 +388,8 @@ berserk-sunity-cursor
 berserk-tpm-tmux
 berserk-lazyvim
 berserk-welcome
+
+## security setup
+# core apparmor support
+apparmor
+audit
