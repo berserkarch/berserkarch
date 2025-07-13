@@ -385,6 +385,7 @@ berserk-config-calamares
 berserk-hooks
 # Theming & Configuration
 berserk-config-xfce
+berserk-polybar
 berserk-firefox-defaults
 berserk-grub-theme
 berserk-omz
