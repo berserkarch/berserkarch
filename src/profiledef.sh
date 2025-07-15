@@ -3,9 +3,11 @@
 
 iso_name="berserkarch-vm"
 iso_label="BERSERK_ARCH_VM_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="Gaurav Raj (@thehackersbrain) <me@thehackersbrain.xyz>"
+iso_publisher="Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>"
 iso_application="Berserk Arch VM Live/Installation/Rescue CD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
+gpg_key="B024DCEFADEF4328B5E3A848E7E0F2B78484DACF"
+gpg_signing_key="B024DCEFADEF4328B5E3A848E7E0F2B78484DACF"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'

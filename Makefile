@@ -11,7 +11,14 @@ BRANCH ?= main
 all: build
 build:
 	@echo "--- Starting Berserk Arch Build ---"
-	sudo mkarchiso -v -w $(WORK_DIR) -o $(OUT_DIR) -L "$(ISO_LABEL)" "$(PROFILE_DIR)"
+	sudo mkarchiso \
+		-v \
+		-w $(WORK_DIR) \
+		-o $(OUT_DIR) \
+		-L "$(ISO_LABEL)" \
+		-g B024DCEFADEF4328B5E3A848E7E0F2B78484DACF \
+		-G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>" \
+		"$(PROFILE_DIR)"
 	@echo "--- Build Complete! ISO is in the '$(OUT_DIR)' directory. ---"
 
 clean:
