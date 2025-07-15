@@ -379,10 +379,12 @@ chaotic-mirrorlist
 # Custom packages specific to the Berserk OS configuration.
 berserk-keyring
 berserk-mirrorlist
+
 # Installer
 berserk-calamares
 berserk-config-calamares
 berserk-hooks
+
 # Theming & Configuration
 berserk-config-xfce
 berserk-polybar
