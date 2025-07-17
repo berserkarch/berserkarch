@@ -16,9 +16,9 @@ build:
 		-w $(WORK_DIR) \
 		-o $(OUT_DIR) \
 		-L "$(ISO_LABEL)" \
-		-g B024DCEFADEF4328B5E3A848E7E0F2B78484DACF \
-		-G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>" \
 		"$(PROFILE_DIR)"
+		# -g B024DCEFADEF4328B5E3A848E7E0F2B78484DACF \
+		# -G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>"
 	@echo "--- Build Complete! ISO is in the '$(OUT_DIR)' directory. ---"
 
 clean:
