@@ -371,12 +371,12 @@ audit
 # -- Third-Party Repositories --
 # Keyrings and mirrorlists for non-official repositories.
 # Make sure these repositories are configured in /etc/pacman.conf on the ISO build.
-berserk-keyring
+chaotic-mirrorlist
+blackarch-mirrorlist
 berserk-mirrorlist
 blackarch-keyring
-blackarch-mirrorlist
 chaotic-keyring
-chaotic-mirrorlist
+berserk-keyring
 
 # -- Custom 'Berserk' Packages --
 # Custom packages specific to the Berserk OS configuration.
