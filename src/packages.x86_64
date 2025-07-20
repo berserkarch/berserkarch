@@ -367,6 +367,7 @@ zip
 # core apparmor support
 apparmor
 audit
+firewalld
 
 # -- Third-Party Repositories --
 # Keyrings and mirrorlists for non-official repositories.
