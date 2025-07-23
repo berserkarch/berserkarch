@@ -204,9 +204,7 @@ ueberzug
 # -- General Applications --
 # A curated list of GUI and command-line applications for various tasks.
 # File Managers
-mc
-pcmanfm
-ranger
+thunar
 xarchiver
 # Text Editors
 nano
@@ -358,7 +356,6 @@ yay
 
 # -- Compression & Archive Utilities --
 exa
-yazi
 p7zip
 unarchiver
 unrar
