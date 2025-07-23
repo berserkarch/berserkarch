@@ -310,6 +310,7 @@ automake
 base-devel
 bison
 boost
+cmake
 diffutils
 fakeroot
 flex
