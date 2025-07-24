@@ -17,11 +17,12 @@ sudo
 xz
 zstd
 
-# -- Linux Kernel & Firmware --
+# -- Linux Kernel, Firmware & Necessary Modules --
 # The kernel itself, along with firmware needed for various hardware components.
 linux
 linux-firmware
-linux-firmware-marvell
+# linux-firmware-marvell
+linux-headers
 # linux-atm
 sof-firmware
 amd-ucode
