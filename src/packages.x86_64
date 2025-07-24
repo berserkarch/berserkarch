@@ -322,6 +322,7 @@ patch
 pkgconf
 python-pip
 python-pipx
+
 # Search & CLI tools often used in development
 fd
 fzf
@@ -368,6 +369,9 @@ zip
 apparmor
 audit
 firewalld
+
+## tools and utilities
+docker
 
 # -- Third-Party Repositories --
 # Keyrings and mirrorlists for non-official repositories.
