@@ -21,6 +21,16 @@ build:
 		# -G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>"
 	@echo "--- Build Complete! ISO is in the '$(OUT_DIR)' directory. ---"
 
+devbuild:
+	@echo "--- Starting Berserk Arch Build ---"
+	mkarchiso \
+		-v \
+		-w $(WORK_DIR) \
+		-o $(OUT_DIR) \
+		-L "$(ISO_LABEL)" \
+		"$(PROFILE_DIR)"
+	@echo "--- Build Complete! ISO is in the '$(OUT_DIR)' directory. ---"
+
 clean:
 	@echo "--- Cleaning up build directories ---"
 	sudo rm -rf $(WORK_DIR) $(OUT_DIR)
@@ -37,4 +47,4 @@ run test: #build # uncomment this to run build before testing
 		# -drive if=pflash,format=raw,file=/usr/share/edk2/x64/OVMF_VARS.fd
 
 # Phony targets: These are not actual files.
-.PHONY: all build clean run test
+.PHONY: all build devbuild clean run test
