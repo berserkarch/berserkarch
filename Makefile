@@ -25,7 +25,7 @@ devbuild:
 	@echo "--- Starting Berserk Arch Build ---"
 	mkarchiso \
 		-v \
-		-w $(WORK_DIR) \
+		-w "../$(WORK_DIR)" \
 		-o $(OUT_DIR) \
 		-L "$(ISO_LABEL)" \
 		"$(PROFILE_DIR)"
