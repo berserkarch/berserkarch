@@ -392,6 +392,7 @@ berserk-install-scripts
 # Theming & Configuration
 berserk-config-xfce
 berserk-polybar
+berserk-rofi
 berserk-firefox-defaults
 berserk-grub-theme
 berserk-omz
