@@ -160,8 +160,6 @@ lightdm
 lightdm-gtk-greeter
 # Compositor, Bars, and Launchers
 picom
-polybar
-rofi
 # Theming and Appearance
 kvantum
 lxappearance
