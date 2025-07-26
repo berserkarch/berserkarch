@@ -390,7 +390,6 @@ berserk-hooks
 berserk-install-scripts
 
 # Theming & Configuration
-berserk-polybar
 berserk-rofi
 berserk-default-themes
 berserk-firefox-defaults
