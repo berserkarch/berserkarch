@@ -127,7 +127,7 @@ runuser -l liveuser -c 'xdg-user-dirs-gtk-update'
 xdg-user-dirs-update
 xdg-user-dirs-gtk-update
 
-mv /etc/berserk-environment /etc/environment
+# mv /etc/berserk-environment /etc/environment
 
 ## refresh pacman mirrors
 pacman-key --init
