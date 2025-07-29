@@ -1,1 +1,1 @@
-// Source : XFCE ISO Profile and Packages for Berserk Arch
+// Source : Main ISO Profile for BerserkArch (Experimental)
