@@ -1,7 +1,7 @@
 # Makefile for building Berserk Arch with archiso
 
-ISO_NAME := berserkarch-vm
-ISO_LABEL := BERSERK_ARCH_VM
+ISO_NAME := berserkarch
+ISO_LABEL := BERSERKARCH
 PROFILE_DIR := src
 OUT_DIR := out
 WORK_DIR := work

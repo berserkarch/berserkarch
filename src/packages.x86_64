@@ -152,6 +152,14 @@ xf86-video-qxl
 
 # -- Desktop Environment (XFCE), Window Manager & Components --
 # The graphical user interface, including the desktop environment, display manager, compositor, and themes.
+# Core GNOME
+gnome
+d-spy
+dconf-editor
+ghex
+gnome-tweaks
+sysprof
+
 # Core XFCE
 xfce4
 xfce4-goodies
@@ -216,7 +224,6 @@ firefox
 # irssi
 # lynx
 # Media & Document Viewers
-evince
 feh
 #simplescreenrecorder
 viewnior
@@ -224,10 +231,8 @@ zathura
 # System & Utility Applications
 fastfetch
 flameshot
-galculator
 htop
 maim
-meld
 berserk-neofetch
 timeshift
 trash-cli
@@ -395,7 +400,11 @@ berserk-default-themes
 berserk-firefox-defaults
 berserk-grub-theme
 berserk-omz
+berserk-gtk-theme
 berserk-user-config
+gnome-shell-extensions
+gnome-shell-extension-dash-to-dock
+berserk-config-gnome
 berserk-config-xfce
 berserk-plymouth-theme
 berserk-sunity-cursor

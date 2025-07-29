@@ -78,6 +78,9 @@ if [[ ! -d "$rdir" ]]; then
   mkdir "$rdir"
 fi
 
+## Enable Display Manager
+systemctl enable lightdm.service
+
 rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4)
 for cfg in "${rconfig[@]}"; do
   if [[ -e "$sdir/.config/$cfg" ]]; then
