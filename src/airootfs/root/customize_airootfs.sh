@@ -83,6 +83,14 @@ systemctl enable lightdm.service
 sed -i 's/^#autologin-user=.*/autologin-user=liveuser/' /etc/lightdm/lightdm.conf
 sed -i 's/^#autologin-session=.*/autologin-session=xfce/' /etc/lightdm/lightdm.conf
 
+## SET cussor theme
+mkdir -p /etc/X11/xinit/xinitrc.d
+cat >/etc/X11/xinit/xinitrc.d/20-cursor-theme.sh <<EOF
+#!/bin/sh
+export XCURSOR_THEME="Sunity-Cursors"
+EOF
+chmod +x /etc/X11/xinit/xinitrc.d/20-cursor-theme.sh
+
 rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4)
 for cfg in "${rconfig[@]}"; do
   if [[ -e "$sdir/.config/$cfg" ]]; then
