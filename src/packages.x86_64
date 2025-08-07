@@ -131,7 +131,7 @@ vpnc
 # The X server, video drivers for common hardware, and related utilities.
 mesa
 mesa-utils
-xorg
+extra/xorg
 xorg-xinput
 xterm
 # generic and virtual drivers
