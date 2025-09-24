@@ -359,6 +359,7 @@ reflector
 rsync
 sequoia-sq
 yay
+pamac
 
 # -- Compression & Archive Utilities --
 exa
