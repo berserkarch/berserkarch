@@ -79,9 +79,10 @@ if [[ ! -d "$rdir" ]]; then
 fi
 
 ## Enable Display Manager
-systemctl enable lightdm.service
-sed -i 's/^#autologin-user=.*/autologin-user=liveuser/' /etc/lightdm/lightdm.conf
-sed -i 's/^#autologin-session=.*/autologin-session=xfce/' /etc/lightdm/lightdm.conf
+# systemctl enable lightdm.service
+systemctl enable sddm
+# sed -i 's/^#autologin-user=.*/autologin-user=liveuser/' /etc/lightdm/lightdm.conf
+# sed -i 's/^#autologin-session=.*/autologin-session=xfce/' /etc/lightdm/lightdm.conf
 
 ## SET cussor theme
 mkdir -p /etc/X11/xinit/xinitrc.d

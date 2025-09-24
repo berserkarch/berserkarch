@@ -164,8 +164,9 @@ sysprof
 xfce4
 xfce4-goodies
 # Display Manager
-lightdm
-lightdm-gtk-greeter
+# lightdm
+# lightdm-gtk-greeter
+sddm
 # Compositor, Bars, and Launchers
 picom
 # Theming and Appearance
