@@ -195,7 +195,7 @@ xdg-user-dirs-gtk
 xdotool
 yad
 # Plasma framework - likely pulled in as a dependency for a Qt application
-plasma-framework5
+# plasma-framework5
 
 # -- Terminal Emulators & Shells --
 # A collection of modern and classic terminal emulators and shells.
