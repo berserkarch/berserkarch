@@ -166,7 +166,8 @@ xfce4-goodies
 # Display Manager
 # lightdm
 # lightdm-gtk-greeter
-berserk-sddm
+# berserk-sddm
+sddm
 # Compositor, Bars, and Launchers
 picom
 # Theming and Appearance
