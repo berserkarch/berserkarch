@@ -81,6 +81,7 @@ fi
 ## Enable Display Manager
 # systemctl enable lightdm.service
 systemctl enable sddm
+systemctl enable NetworkManager.service
 # sed -i 's/^#autologin-user=.*/autologin-user=liveuser/' /etc/lightdm/lightdm.conf
 # sed -i 's/^#autologin-session=.*/autologin-session=xfce/' /etc/lightdm/lightdm.conf
 

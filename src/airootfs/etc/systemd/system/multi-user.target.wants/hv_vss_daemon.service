@@ -1,1 +1,9 @@
-/usr/lib/systemd/system/hv_vss_daemon.service
+[Unit]
+Description=Hyper-V volume shadow copy service (VSS)
+ConditionPathExists=/dev/vmbus/hv_vss
+
+[Service]
+ExecStart=/usr/bin/hv_vss_daemon -n
+
+[Install]
+WantedBy=multi-user.target

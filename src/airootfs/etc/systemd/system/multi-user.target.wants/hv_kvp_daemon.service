@@ -1,1 +1,9 @@
-/usr/lib/systemd/system/hv_kvp_daemon.service
+[Unit]
+Description=Hyper-V key-value pair (KVP)
+ConditionPathExists=/dev/vmbus/hv_kvp
+
+[Service]
+ExecStart=/usr/bin/hv_kvp_daemon -n
+
+[Install]
+WantedBy=multi-user.target
