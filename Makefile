@@ -8,9 +8,26 @@ WORK_DIR := work
 BRANCH ?= main
 
 TRACKERS := \
-	udp://tracker.openbittorrent.com:80/announce \
 	udp://tracker.opentrackr.org:1337/announce \
-	udp://tracker.leechers-paradise.org:6969/announce
+	udp://open.demonoid.ch:6969/announce \
+	udp://open.demonii.com:1337/announce \
+	udp://open.stealth.si:80/announce \
+	udp://tracker.torrent.eu.org:451/announce \
+	udp://exodus.desync.com:6969/announce \
+	udp://wepzone.net:6969/announce \
+	udp://tracker2.dler.org:80/announce \
+	udp://tracker.tvunderground.org.ru:3218/announce \
+	udp://tracker.tryhackx.org:6969/announce \
+	udp://tracker.torrust-demo.com:6969/announce \
+	udp://tracker.therarbg.to:6969/announce \
+	udp://tracker.t-1.org:6969/announce \
+	udp://tracker.startwork.cv:1337/announce \
+	udp://tracker.srv00.com:6969/announce \
+	udp://tracker.qu.ax:6969/announce \
+	udp://tracker.plx.im:6969/announce \
+	udp://tracker.hifimarket.in:2710/announce \
+	udp://tracker.gmi.gd:6969/announce \
+	udp://tracker.filemail.com:6969/announce
 
 WEBSEED := https://iso.berserkarch.xyz
 
@@ -72,6 +89,7 @@ torrent: checksums
 	TRACKER_ARGS=""; \
 	for t in $(TRACKERS); do TRACKER_ARGS="$$TRACKER_ARGS -a $$t"; done; \
 	mktorrent -l 21 $$TRACKER_ARGS -w "$$DYNAMIC_WEBSEED" -o "$$ISO_FILE.torrent" "$$ISO_FILE"; \
+	echo "https://iso.berserkarch.xyz/$$(basename "$$ISO_FILE").torrent" > "$(OUT_DIR)/torrent.txt"; \
 	echo "[+] Torrent created: $$ISO_FILE.torrent"; \
 	echo "[+] Done."
 
