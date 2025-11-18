@@ -26,3 +26,6 @@ file_permissions=(
   ["/root/customize_airootfs.sh"]="0:0:755"
   ["/usr/local/bin/choose-mirror"]="0:0:755"
 )
+
+# HOTFIX
+iso_size="0"
