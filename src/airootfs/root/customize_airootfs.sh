@@ -149,7 +149,7 @@ pacman-key --init
 pacman-key --populate
 # pacman-key --recv-keys B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
 # pacman-key --lsign-key B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
-curl -s https://thehackersbrain.xyz/pubkey.asc | gpg --import
+curl -s https://thehackersbrain.dev/pubkey.asc | gpg --import
 gpg --export B024DCEFADEF4328B5E3A848E7E0F2B78484DACF | pacman-key --add -
 pacman-key --lsign-key B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
 pacman -Syy --noconfirm
