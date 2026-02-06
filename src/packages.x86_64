@@ -35,8 +35,9 @@ b43-fwcutter
 grub
 syslinux
 efibootmgr
-#os-prober
-# refind
+os-prober
+refind
+dracut
 memtest86+
 memtest86+-efi
 plymouth
@@ -161,12 +162,21 @@ xf86-video-qxl
 # sysprof
 
 # Core XFCE
-# xfce4
-# xfce4-goodies
-# Display Manager
-# lightdm
-# lightdm-gtk-greeter
-# berserk-sddm
+xfce4
+xfce4-battery-plugin
+xfce4-datetime-plugin
+xfce4-mount-plugin
+xfce4-netload-plugin
+xfce4-notifyd
+xfce4-pulseaudio-plugin
+xfce4-screensaver
+xfce4-screenshooter
+xfce4-taskmanager
+xfce4-wavelan-plugin
+xfce4-weather-plugin
+xfce4-whiskermenu-plugin
+xfce4-xkb-plugin
+berserk-config-xfce
 
 obmenu-generator
 berserk-config-openbox
@@ -395,8 +405,8 @@ berserk-keyring
 # -- Custom 'Berserk' Packages --
 # Custom packages specific to the Berserk OS configuration.
 # Installer
-berserk-calamares
-berserk-config-calamares
+berserk-calamares-next
+berserk-config-calamares-next
 berserk-hooks
 berserk-install-scripts
 
