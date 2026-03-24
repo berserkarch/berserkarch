@@ -29,7 +29,7 @@ TRACKERS := \
 	udp://tracker.gmi.gd:6969/announce \
 	udp://tracker.filemail.com:6969/announce
 
-WEBSEED := https://iso.berserkarch.xyz
+WEBSEED := https://iso.berserkarch.org
 
 define get_iso
 	ISO_FILE=$$(ls -t $(OUT_DIR)/$(ISO_NAME)*.iso 2>/dev/null | head -n 1); \
@@ -50,7 +50,7 @@ build:
 		-L "$(ISO_LABEL)" \
 		"$(PROFILE_DIR)"
 		# -g B024DCEFADEF4328B5E3A848E7E0F2B78484DACF \
-		# -G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>"
+		# -G "Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.org>"
 	@echo "--- Build Complete! ISO is in the '$(OUT_DIR)' directory. ---"
 
 devbuild:
@@ -75,7 +75,7 @@ checksums:
 	sha256sum "$$ISO_FILE" > "$$ISO_FILE.sha256"; \
 	sha1sum   "$$ISO_FILE" > "$$ISO_FILE.sha1"; \
 	md5sum    "$$ISO_FILE" > "$$ISO_FILE.md5"; \
-	echo "https://iso.berserkarch.xyz/$$(basename "$$ISO_FILE")" > "$(OUT_DIR)/latest.txt"; \
+	echo "https://iso.berserkarch.org/$$(basename "$$ISO_FILE")" > "$(OUT_DIR)/latest.txt"; \
 	echo "[*] Created 'latest' file pointing to: $$(basename "$$ISO_FILE")"; \
 	ls -lh "$$ISO_FILE"*
 
@@ -89,7 +89,7 @@ torrent: checksums
 	TRACKER_ARGS=""; \
 	for t in $(TRACKERS); do TRACKER_ARGS="$$TRACKER_ARGS -a $$t"; done; \
 	mktorrent -l 21 $$TRACKER_ARGS -w "$$DYNAMIC_WEBSEED" -o "$$ISO_FILE.torrent" "$$ISO_FILE"; \
-	echo "https://iso.berserkarch.xyz/$$(basename "$$ISO_FILE").torrent" > "$(OUT_DIR)/torrent.txt"; \
+	echo "https://iso.berserkarch.org/$$(basename "$$ISO_FILE").torrent" > "$(OUT_DIR)/torrent.txt"; \
 	echo "[+] Torrent created: $$ISO_FILE.torrent"; \
 	echo "[+] Done."
 
