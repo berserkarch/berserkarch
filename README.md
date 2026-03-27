@@ -4,14 +4,14 @@
 
 Repo: [https://github.com/berserkarch/berserkarch](https://github.com/berserkarch/berserkarch)
 
-Official Website: [https://berserkarch.xyz/](https://berserkarch.xyz)
+Official Website: [https://berserkarch.org/](https://berserkarch.org)
 
-Official Wiki/Docs: [https://wiki.berserkarch.xyz/](https://wiki.berserkarch.xyz)
+Official Wiki/Docs: [https://wiki.berserkarch.org/](https://wiki.berserkarch.org)
 
 ## Creator
 
 [Gaurav Raj](https://www.google.com/search?q=thehackersbrain)
 
-Portfolio: [https://thehackersbrain.xyz](https://thehackersbrain.xyz)
+Portfolio: [https://thehackersbrain.dev](https://thehackersbrain.dev)
 
-Blog: [https://blog.thehackersbrain.xyz](https://blog.thehackersbrain.xyz)
+Blog: [https://blog.thehackersbrain.dev](https://blog.thehackersbrain.dev)
