@@ -1,68 +1,6 @@
 #!/usr/bin/env bash
 
-## Script to perform several important tasks before `mkarchcraftiso` create filesystem image.
-
 set -e -u
-
-## -------------------------------------------------------------- ##
-
-# ## Fix Initrd Generation in Installed System
-# cat >"/etc/mkinitcpio.d/linux.preset" <<-_EOF_
-# 	# mkinitcpio preset file for the 'linux' package
-#
-# 	ALL_kver="/boot/vmlinuz-linux"
-# 	ALL_config="/etc/mkinitcpio.conf"
-#
-# 	PRESETS=('default' 'fallback')
-#
-# 	#default_config="/etc/mkinitcpio.conf"
-# 	default_image="/boot/initramfs-linux.img"
-# 	#default_options=""
-#
-# 	#fallback_config="/etc/mkinitcpio.conf"
-# 	fallback_image="/boot/initramfs-linux-fallback.img"
-# 	fallback_options="-S autodetect"
-# _EOF_
-
-## -------------------------------------------------------------- ##
-
-## Enable Parallel Downloads
-# sed -i -e 's|#ParallelDownloads.*|ParallelDownloads = 5|g' /etc/pacman.conf
-# sed -i -e '/#\[core-testing\]/Q' /etc/pacman.conf
-
-## Append archcraft repository to pacman.conf
-# cat >>"/etc/pacman.conf" <<-EOL
-# 	[archcraft]
-# 	SigLevel = Optional TrustAll
-# 	Include = /etc/pacman.d/archcraft-mirrorlist
-#
-# 	#[core-testing]
-# 	#Include = /etc/pacman.d/mirrorlist
-#
-# 	[core]
-# 	Include = /etc/pacman.d/mirrorlist
-#
-# 	#[extra-testing]
-# 	#Include = /etc/pacman.d/mirrorlist
-#
-# 	[extra]
-# 	Include = /etc/pacman.d/mirrorlist
-#
-# 	# If you want to run 32 bit applications on your x86_64 system,
-# 	# enable the multilib repositories as required here.
-#
-# 	#[multilib-testing]
-# 	#Include = /etc/pacman.d/mirrorlist
-#
-# 	#[multilib]
-# 	#Include = /etc/pacman.d/mirrorlist
-#
-# 	# An example of a custom package repository.  See the pacman manpage for
-# 	# tips on creating your own repositories.
-# 	#[custom]
-# 	#SigLevel = Optional TrustAll
-# 	#Server = file:///home/custompkgs
-# EOL
 
 ## -------------------------------------------------------------- ##
 
@@ -78,27 +16,14 @@ if [[ ! -d "$rdir" ]]; then
   mkdir "$rdir"
 fi
 
-## Enable Display Manager
-# systemctl enable lightdm.service
-systemctl enable sddm
 systemctl enable NetworkManager.service
-# sed -i 's/^#autologin-user=.*/autologin-user=liveuser/' /etc/lightdm/lightdm.conf
-# sed -i 's/^#autologin-session=.*/autologin-session=xfce/' /etc/lightdm/lightdm.conf
 
-## SET cussor theme
-mkdir -p /etc/X11/xinit/xinitrc.d
-cat >/etc/X11/xinit/xinitrc.d/20-cursor-theme.sh <<EOF
-#!/bin/sh
-export XCURSOR_THEME="Sunity-Cursors"
-EOF
-chmod +x /etc/X11/xinit/xinitrc.d/20-cursor-theme.sh
-
-rconfig=(geany gtk-3.0 Kvantum neofetch qt5ct ranger Thunar xfce4)
-for cfg in "${rconfig[@]}"; do
-  if [[ -e "$sdir/.config/$cfg" ]]; then
-    cp -rf "$sdir"/.config/"$cfg" "$rdir"
-  fi
-done
+## Build the pacman keyring at ISO build time so it ships in the squashfs.
+## Without this, the booted live system would need to run pacman-key at boot
+## (slow GPG operations). The overlayfs makes /etc/pacman.d/gnupg/ writable
+## at runtime, so pacman can update trust data normally.
+pacman-key --init
+pacman-key --populate
 
 rcfg=('.oh-my-zsh' '.vim_runtime' '.vimrc' '.zshrc')
 for cfile in "${rcfg[@]}"; do
@@ -107,52 +32,11 @@ for cfile in "${rcfg[@]}"; do
   fi
 done
 
-## -------------------------------------------------------------- ##
-
-## Fix wallpaper in xfce
-# mv /usr/share/backgrounds/xfce/xfce-shapes.svg /usr/share/backgrounds/xfce/xfce-shapes-ac.svg
-# cp -rf /usr/share/backgrounds/default.jpg /usr/share/backgrounds/xfce/xfce-shapes.svg
-
-## -------------------------------------------------------------- ##
-
-## Copy Calamares to Desktop
-_desktop="/home/liveuser/Desktop"
-
-if [[ ! -d "${_desktop}" ]]; then
-  mkdir -p "${_desktop}"
+## Populate liveuser home from skel
+if [[ -d /home/liveuser ]]; then
+  cp -rf "$sdir"/. /home/liveuser/
+  chown -R 1000:1000 /home/liveuser/
 fi
-
-cp /usr/share/applications/calamares.desktop "${_desktop}"
-chown -R liveuser:users "${_desktop}"
-chmod +x "${_desktop}"/calamares.desktop
-
-## -------------------------------------------------------------- ##
-
-## Fix grub theme path, issue with ABIF LUKS installation
-# sed -i -e 's#GRUB_THEME=.*#GRUB_THEME="/boot/grub/themes/archcraft/theme.txt"#g' /etc/default/grub
-
-## -------------------------------------------------------------- ##
-
-## Fix cursor theme
-# rm -rf /usr/share/icons/default
-
-## Update xdg-user-dirs for bookmarks in thunar and pcmanfm
-runuser -l liveuser -c 'xdg-user-dirs-update'
-runuser -l liveuser -c 'xdg-user-dirs-gtk-update'
-xdg-user-dirs-update
-xdg-user-dirs-gtk-update
-
-# mv /etc/berserk-environment /etc/environment
-
-## refresh pacman mirrors
-pacman-key --init
-pacman-key --populate
-# pacman-key --recv-keys B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
-# pacman-key --lsign-key B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
-curl -s https://thehackersbrain.dev/pubkey.asc | gpg --import
-gpg --export B024DCEFADEF4328B5E3A848E7E0F2B78484DACF | pacman-key --add -
-pacman-key --lsign-key B024DCEFADEF4328B5E3A848E7E0F2B78484DACF
-pacman -Syy --noconfirm
 
 ## -------------------------------------------------------------- ##
 
