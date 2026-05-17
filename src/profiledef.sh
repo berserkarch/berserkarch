@@ -3,11 +3,9 @@
 
 iso_name="berserkarch"
 iso_label="BERSERKARCH_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.xyz>"
-iso_application="Berserk Arch VM Live/Installation/Rescue CD"
+iso_publisher="Gaurav Raj (@thehackersbrain) <gauravraj@berserkarch.org>"
+iso_application="Berserk Arch Live/Installation/Rescue CD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
-# gpg_key="B024DCEFADEF4328B5E3A848E7E0F2B78484DACF"
-# gpg_signing_key="B024DCEFADEF4328B5E3A848E7E0F2B78484DACF"
 install_dir="arch"
 buildmodes=('iso')
 bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito'
@@ -25,7 +23,6 @@ file_permissions=(
   ["/root/.automated_script.sh"]="0:0:755"
   ["/root/customize_airootfs.sh"]="0:0:755"
   ["/usr/local/bin/choose-mirror"]="0:0:755"
-  ["/home/liveuser"]="1000:1000:750"
 )
 
 # HOTFIX
