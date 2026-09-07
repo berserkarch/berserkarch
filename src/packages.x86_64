@@ -18,7 +18,6 @@ sof-firmware
 amd-ucode
 intel-ucode
 b43-fwcutter
-broadcom-wl
 
 # -- Bootloaders & Boot Utilities --
 grub
